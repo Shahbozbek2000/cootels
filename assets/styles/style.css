@@ -45,13 +45,22 @@ button {
   font-size: 16px;
 }
 .navbar {
+  position: relative;
+  z-index: 100;
   display: flex;
   align-items: center;
   /* width: 83%;
   margin: 0 auto; */
-  height: 115px;
+  height: auto;
+  margin-top:30px;
 }
-
+.navbar-light .navbar-toggler {
+  border: none !important;
+}
+.navbar-toggler:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
 .navbar-brand {
   font-weight: 600;
   font-size: 30px;
@@ -291,6 +300,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all .5s;
 }
 .angle-down-provider i {
   color: var(--accordion_circle_active);
@@ -308,6 +318,11 @@ button {
 .accordion-button:not(.collapsed) .angle-down-provider i {
   transform: rotateX(180deg);
   transition: all .5s;
+  color: white;
+}
+.accordion-button:not(.collapsed) .angle-down-provider {
+  background-color: var(--accordion_circle_active);
+  transition: all 1s;
 }
 
 
@@ -320,7 +335,93 @@ button {
 .accordion-button::after {
   display: none;
  }
+
+/* CAROUSEL STARTED */
+#section-last {
+  width: 100%;
+  height: auto;
+  margin-bottom: 100px;
+}
+#section-last .biography {
+  width: 51%;
+  margin: 0 auto;
+}
+#section-last .biography h1 {
+  font-size: 34px;
+}
+#section-last .biography p {
+  text-align: center;
+  color: #848FAC;
+  margin-top: 42px;
+}
+.carousel-indicators {
+  position: absolute;
+  top: 100% !important;
+}
+.carousel-indicators button {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: var(--accordion_circle_active) !important;
+  border-radius: 50%;
+}
+.biography h4 {
+  color: #192252;
+}
+/* CAROUSEL FINISHED */
+footer {
+  width: 100%;
+  background-color: var(--footer);
+  /* height: 444px; */
+}
+footer .container {
+  /* width: calc(100% - 240px); */
+  padding: 120px 30px;  
+}
+.footer-left-info h1 {
+  color: white;
+  font-size: 30px;
+}
+.footer-left-info p {
+  width: 35%;
+}
+.social-media {
+  margin-top:35px;
+}
+.social-media i {
+  color: white;
+  font-size: 22px;
+}
+
+.footer-links p {
+  color: white;
+}
+.footer-links ul {
+  padding-left: 0;
+}
+.footer-links ul li {
+  list-style: none;
+  color: #D9DBDE;
+  line-height: 35px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+/* MEDIA SCREEN 992PX */
+
 @media (max-width: 992px) {
+  .navbar {
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
   .section-info h1 {
     font-size: 24px;
   }
@@ -339,9 +440,49 @@ button {
   .section-right {
     margin-left: 0;
   }
+  #section-five .accordion-left-info h1 {
+    font-size: 24px;
+  }
+  #section-five .accordion-left-info p {
+    width: 100%;
+  }
+  .accordion-button  {
+    font-size: 18px;
+  }
+  .angle-down-provider {
+    width: 30px;
+    height: 30px;
+  }
+  .footer-left-info p {
+    width: 100%;
+  }
 }
 
+/* MEDIA SCREEN 992PX */
+/* MEDIA SCREEN 900PX */
+
+@media (max-width: 900px) {
+
+}
+
+
+
+/* MEDIA SCREEN 900PX */
+
+
+
+
+
+
+
+
+
+
+/* MEDIA SCREEN 768PX */
 @media (max-width: 768px) {
+  .main-info {
+    margin-top: 50px;
+  }
   .image-group {
     margin-top: 40px;
   }
@@ -362,9 +503,27 @@ button {
   #section-four p {
     width: 100% !important;
   }
+  
+  /* footer .container .col-lg-2:first-child, */
+  footer .container .footer-column {
+    display: flex;
+    justify-content: space-around; 
+  }
+  footer .container .col-lg-2:last-child {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
+/* MEDIA SCREEN 768PX */
+/* MEDIA SCREEN 576PX */
 @media (max-width: 576px) {
+  .navbar-collapse {
+    /* height: 80vh; */
+  }
+  .image-group .picture-second {
+    top: 45px;
+  }
   .main-info h1 {
     font-size: 35px;
   }
@@ -374,8 +533,22 @@ button {
   #section-third .row-reverse {
     flex-direction: column-reverse;
   }
+  .carousel-title h1 {
+    font-size: 24px;
+  }
+  #section-last .biography {
+    width: 90%;
+  }
+  #section-last .biography p {
+    font-size: 14px;
+  }
+  .biography h4 {
+    font-size: 16px;
+    color: #192252;
+  }
 }
-
+/* MEDIA SCREEN 576PX */
+/* MEDIA SCREEN 400PX */
 @media (max-width: 400px) {
   .main-info h1 {
     font-size: 24px;
@@ -383,8 +556,46 @@ button {
   .picture-left img {
     width: 100%;
   }
+  .accordion-header {
+    height: 70px !important;
+  }
+  #section-five .accordion-left-info .contact-us button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+  #section-five .accordion-left-info .contact-us .nav-link {
+    font-size: 14px;
+  }
+  #section-four .panel-info h1 {
+    font-size: 24px;
+  }
+  #section-four .panel-info {
+    margin-top: 50px;
+  }
+  .accordion-body {
+    font-size: 13px;
+  }
+  .accordion-flush .accordion-collapse {
+    margin-top: -30px;
+  }
+  .carousel-title h1 {
+    font-size: 18px;
+  }
 }
 
+@media (max-width: 360px) {
+  .accordion-button {
+    font-size: 14px;
+  }
+  footer .container  {
+    padding: 60px 20px;
+  }
+  .footer-left-info h1 {
+    font-size: 18px;
+  }
+}
+/* MEDIA SCREEN 400PX */
 /* css scrollbar */
 
 ::-webkit-scrollbar {
