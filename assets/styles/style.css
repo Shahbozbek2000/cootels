@@ -518,8 +518,17 @@ footer .container {
 /* MEDIA SCREEN 768PX */
 /* MEDIA SCREEN 576PX */
 @media (max-width: 576px) {
+  .form-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .navbar-collapse {
-    /* height: 80vh; */
+    /* margin-left: 26px; */
+    text-align: center;
+  }
+  .nav-item {
+    height: 100px;
   }
   .image-group .picture-second {
     top: 45px;
